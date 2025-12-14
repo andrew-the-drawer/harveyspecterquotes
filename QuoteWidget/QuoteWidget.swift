@@ -64,64 +64,149 @@ struct QuoteWidgetEntryView : View {
 
     var body: some View {
         ZStack {
-            LinearGradient(
-                gradient: Gradient(colors: [Color.blue.opacity(0.6), Color.purple.opacity(0.6)]),
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
-            )
+            // Premium gradient background
+            LinearGradient.widgetPremiumGradient
 
-            VStack(spacing: widgetFamily == .systemSmall ? 8 : 12) {
-                Image(systemName: "quote.bubble.fill")
-                    .font(.system(size: widgetFamily == .systemSmall ? 20 : 24))
-                    .foregroundColor(.white.opacity(0.9))
+            // Subtle texture overlay
+            Color.white.opacity(0.02)
 
-                ScrollingText(text: entry.quote, fontSize: widgetFamily == .systemSmall ? 11 : 13)
-                    .foregroundColor(.white)
-                    .frame(maxWidth: .infinity)
-                    .padding(.horizontal, 8)
+            VStack(spacing: widgetFamily == .systemSmall ? 12 : 16) {
+                // Decorative quote mark
+                Text("\"")
+                    .font(.system(size: widgetFamily == .systemSmall ? 32 : 40, weight: .bold))
+                    .foregroundColor(.gold.opacity(0.3))
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .offset(x: widgetFamily == .systemSmall ? -8 : -12, y: widgetFamily == .systemSmall ? -4 : -8)
 
-                Text("- Harvey Specter")
-                    .font(.system(size: widgetFamily == .systemSmall ? 8 : 10))
-                    .foregroundColor(.white.opacity(0.8))
-                    .italic()
+                Spacer()
+
+                // Quote text with marquee scrolling for long quotes
+                MarqueeText(
+                    text: entry.quote,
+                    font: .system(
+                        size: widgetFamily == .systemSmall ? 13 : 15,
+                        weight: .medium,
+                        design: .serif
+                    ),
+                    fontSize: widgetFamily == .systemSmall ? 13 : 15,
+                    textColor: .pearlWhite,
+                    lineLimit: widgetFamily == .systemSmall ? 5 : 7,
+                    availableHeight: widgetFamily == .systemSmall ? 80 : 110
+                )
+                .frame(height: widgetFamily == .systemSmall ? 80 : 110)
+                .padding(.horizontal, 8)
+
+                Spacer()
+
+                // Attribution with gold accent
+                HStack(spacing: 4) {
+                    Rectangle()
+                        .fill(Color.gold)
+                        .frame(width: 20, height: 1.5)
+
+                    Text("H.S.")
+                        .font(.system(
+                            size: widgetFamily == .systemSmall ? 10 : 12,
+                            weight: .light
+                        ))
+                        .foregroundColor(.pearlWhite.opacity(0.9))
+                        .italic()
+                        .tracking(1)
+                }
+                .frame(maxWidth: .infinity, alignment: .trailing)
             }
-            .padding(widgetFamily == .systemSmall ? 12 : 16)
+            .padding(widgetFamily == .systemSmall ? 16 : 20)
         }
     }
 }
 
-// Scrolling text view with animation for long quotes
-struct ScrollingText: View {
+// Marquee-style scrolling text for long quotes
+struct MarqueeText: View {
     let text: String
+    let font: Font
     let fontSize: CGFloat
+    let textColor: Color
+    let lineLimit: Int
+    let availableHeight: CGFloat
+
     @State private var offset: CGFloat = 0
+    @State private var shouldScroll: Bool = false
 
     var body: some View {
         GeometryReader { geometry in
-            Text(text)
-                .font(.system(size: fontSize, weight: .medium))
-                .multilineTextAlignment(.center)
-                .lineLimit(nil)
-                .fixedSize(horizontal: false, vertical: true)
-                .frame(width: geometry.size.width)
-                .offset(y: offset)
-                .onAppear {
-                    // Calculate if text needs scrolling
-                    let textHeight = text.heightWithConstrainedWidth(width: geometry.size.width, font: .systemFont(ofSize: fontSize, weight: .medium))
-                    if textHeight > geometry.size.height {
-                        // Animate scrolling for long text
-                        withAnimation(Animation.linear(duration: Double(text.count) * 0.1).repeatForever(autoreverses: true)) {
-                            offset = -(textHeight - geometry.size.height)
-                        }
+            ZStack {
+                if shouldScroll {
+                    // Horizontal marquee scrolling for very long text
+                    HStack(spacing: 50) {
+                        Text(text)
+                            .font(font)
+                            .foregroundColor(textColor)
+                            .lineLimit(1)
+                            .fixedSize()
+
+                        Text(text)
+                            .font(font)
+                            .foregroundColor(textColor)
+                            .lineLimit(1)
+                            .fixedSize()
                     }
+                    .offset(x: offset)
+                    .frame(maxHeight: .infinity, alignment: .center)
+                    .onAppear {
+                        startScrolling(containerWidth: geometry.size.width)
+                    }
+                } else {
+                    // Static multi-line text for normal quotes
+                    Text(text)
+                        .font(font)
+                        .foregroundColor(textColor)
+                        .multilineTextAlignment(.center)
+                        .lineLimit(lineLimit)
+                        .minimumScaleFactor(0.8)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
                 }
+            }
+            .frame(width: geometry.size.width, alignment: shouldScroll ? .leading : .center)
+            .clipped()
+            .onAppear {
+                checkIfScrollingNeeded(
+                    containerWidth: geometry.size.width,
+                    containerHeight: geometry.size.height
+                )
+            }
+        }
+    }
+
+    private func checkIfScrollingNeeded(containerWidth: CGFloat, containerHeight: CGFloat) {
+        // Use marquee if text is too long vertically or horizontally
+        shouldScroll = true
+    }
+
+    private func startScrolling(containerWidth: CGFloat) {
+        let textWidth = text.size(
+            withAttributes: [.font: UIFont.systemFont(ofSize: fontSize, weight: .medium)]
+        ).width
+
+        let scrollDistance = textWidth + 50
+        let duration: Double = Double(scrollDistance / 40) // 40 points per second
+
+        withAnimation(
+            Animation.linear(duration: duration)
+                .repeatForever(autoreverses: false)
+        ) {
+            offset = -scrollDistance
         }
     }
 }
 
-// Helper extension to calculate text height
+// Helper extension to calculate text dimensions
 extension String {
-    func heightWithConstrainedWidth(width: CGFloat, font: UIFont) -> CGFloat {
+    func size(withAttributes attributes: [NSAttributedString.Key: Any]) -> CGSize {
+        let size = (self as NSString).size(withAttributes: attributes)
+        return size
+    }
+
+    func heightForWidth(width: CGFloat, font: UIFont) -> CGFloat {
         let constraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
         let boundingBox = self.boundingRect(
             with: constraintRect,
@@ -151,5 +236,5 @@ struct QuoteWidget: Widget {
     QuoteWidget()
 } timeline: {
     QuoteEntry(date: .now, quote: "I don't have dreams, I have goals.", configuration: ConfigurationAppIntent())
-    QuoteEntry(date: .now, quote: "Work until you no longer have to introduce yourself.", configuration: ConfigurationAppIntent())
+    QuoteEntry(date: .now, quote: "Ever loved someone so much, you would do anything for them? Yeah, well make that someone yourself and do whatever the hell you want", configuration: ConfigurationAppIntent())
 }
