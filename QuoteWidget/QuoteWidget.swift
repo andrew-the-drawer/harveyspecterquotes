@@ -46,7 +46,7 @@ struct Provider: AppIntentTimelineProvider {
         guard let url = Bundle.main.url(forResource: "quotes", withExtension: "json"),
               let data = try? Data(contentsOf: url),
               let quotes = try? JSONDecoder().decode([String].self, from: data) else {
-            return "Work until you no longer have to introduce yourself."
+            return "It’s going to happen, because I am going to make it happen."
         }
         return quotes.randomElement() ?? "I don't have dreams, I have goals."
     }
