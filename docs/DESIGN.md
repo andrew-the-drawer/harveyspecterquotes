@@ -103,13 +103,13 @@ Corner Radius:
 *                            []    Settings icon (gold)
 *$
 *                                 
-*      Quote cards with:
+*    Quote cards with:
 *   "Quote text here..."         - Subtle shadow
 *                                - Gold left border
 *   - Harvey Specter            - Gradient background
 *    
 *                                 
-*    
+*  
 *   "Another quote..."         
 *                              
 *   - Harvey Specter          
