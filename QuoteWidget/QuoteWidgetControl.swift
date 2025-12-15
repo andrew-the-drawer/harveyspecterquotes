@@ -10,7 +10,7 @@ import SwiftUI
 import WidgetKit
 
 struct QuoteWidgetControl: ControlWidget {
-    static let kind: String = "com.atdtn.harveyspectorquotes.QuoteWidget"
+    static let kind: String = "com.atdtn.harveyspecterquotes.QuoteWidget"
 
     var body: some ControlWidgetConfiguration {
         AppIntentControlConfiguration(

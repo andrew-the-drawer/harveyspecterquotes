@@ -10,6 +10,7 @@
 		87F170962EEE718A0058D8BF /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87F170952EEE718A0058D8BF /* WidgetKit.framework */; };
 		87F170982EEE718A0058D8BF /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87F170972EEE718A0058D8BF /* SwiftUI.framework */; };
 		87F170A92EEE718B0058D8BF /* QuoteWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 87F170932EEE718A0058D8BF /* QuoteWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		87F170B92EEFDABA0058D8BF /* MarqueeText in Frameworks */ = {isa = PBXBuildFile; productRef = 87F170B82EEFDABA0058D8BF /* MarqueeText */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -18,14 +19,14 @@
 			containerPortal = 87F170512EEE6A010058D8BF /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 87F170582EEE6A010058D8BF;
-			remoteInfo = harveyspectorquotes;
+			remoteInfo = harveyspecterquotes;
 		};
 		87F170712EEE6A0D0058D8BF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 87F170512EEE6A010058D8BF /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 87F170582EEE6A010058D8BF;
-			remoteInfo = harveyspectorquotes;
+			remoteInfo = harveyspecterquotes;
 		};
 		87F170A72EEE718B0058D8BF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -51,9 +52,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		87F170592EEE6A010058D8BF /* harveyspectorquotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = harveyspectorquotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		87F170662EEE6A0D0058D8BF /* harveyspectorquotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = harveyspectorquotesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		87F170702EEE6A0D0058D8BF /* harveyspectorquotesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = harveyspectorquotesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		87F170592EEE6A010058D8BF /* harveyspecterquotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = harveyspecterquotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		87F170662EEE6A0D0058D8BF /* harveyspecterquotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = harveyspecterquotesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		87F170702EEE6A0D0058D8BF /* harveyspecterquotesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = harveyspecterquotesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		87F170932EEE718A0058D8BF /* QuoteWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = QuoteWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		87F170952EEE718A0058D8BF /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		87F170972EEE718A0058D8BF /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -70,19 +71,19 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		87F1705B2EEE6A010058D8BF /* harveyspectorquotes */ = {
+		87F1705B2EEE6A010058D8BF /* harveyspecterquotes */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = harveyspectorquotes;
+			path = harveyspecterquotes;
 			sourceTree = "<group>";
 		};
-		87F170692EEE6A0D0058D8BF /* harveyspectorquotesTests */ = {
+		87F170692EEE6A0D0058D8BF /* harveyspecterquotesTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = harveyspectorquotesTests;
+			path = harveyspecterquotesTests;
 			sourceTree = "<group>";
 		};
-		87F170732EEE6A0D0058D8BF /* harveyspectorquotesUITests */ = {
+		87F170732EEE6A0D0058D8BF /* harveyspecterquotesUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = harveyspectorquotesUITests;
+			path = harveyspecterquotesUITests;
 			sourceTree = "<group>";
 		};
 		87F170832EEE6C200058D8BF /* docs */ = {
@@ -126,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87F170B92EEFDABA0058D8BF /* MarqueeText in Frameworks */,
 				87F170982EEE718A0058D8BF /* SwiftUI.framework in Frameworks */,
 				87F170962EEE718A0058D8BF /* WidgetKit.framework in Frameworks */,
 			);
@@ -138,9 +140,9 @@
 			isa = PBXGroup;
 			children = (
 				87F170832EEE6C200058D8BF /* docs */,
-				87F1705B2EEE6A010058D8BF /* harveyspectorquotes */,
-				87F170692EEE6A0D0058D8BF /* harveyspectorquotesTests */,
-				87F170732EEE6A0D0058D8BF /* harveyspectorquotesUITests */,
+				87F1705B2EEE6A010058D8BF /* harveyspecterquotes */,
+				87F170692EEE6A0D0058D8BF /* harveyspecterquotesTests */,
+				87F170732EEE6A0D0058D8BF /* harveyspecterquotesUITests */,
 				87F170992EEE718A0058D8BF /* QuoteWidget */,
 				87F170942EEE718A0058D8BF /* Frameworks */,
 				87F1705A2EEE6A010058D8BF /* Products */,
@@ -150,9 +152,9 @@
 		87F1705A2EEE6A010058D8BF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				87F170592EEE6A010058D8BF /* harveyspectorquotes.app */,
-				87F170662EEE6A0D0058D8BF /* harveyspectorquotesTests.xctest */,
-				87F170702EEE6A0D0058D8BF /* harveyspectorquotesUITests.xctest */,
+				87F170592EEE6A010058D8BF /* harveyspecterquotes.app */,
+				87F170662EEE6A0D0058D8BF /* harveyspecterquotesTests.xctest */,
+				87F170702EEE6A0D0058D8BF /* harveyspecterquotesUITests.xctest */,
 				87F170932EEE718A0058D8BF /* QuoteWidgetExtension.appex */,
 			);
 			name = Products;
@@ -170,9 +172,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		87F170582EEE6A010058D8BF /* harveyspectorquotes */ = {
+		87F170582EEE6A010058D8BF /* harveyspecterquotes */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 87F1707A2EEE6A0D0058D8BF /* Build configuration list for PBXNativeTarget "harveyspectorquotes" */;
+			buildConfigurationList = 87F1707A2EEE6A0D0058D8BF /* Build configuration list for PBXNativeTarget "harveyspecterquotes" */;
 			buildPhases = (
 				87F170552EEE6A010058D8BF /* Sources */,
 				87F170562EEE6A010058D8BF /* Frameworks */,
@@ -185,19 +187,19 @@
 				87F170A82EEE718B0058D8BF /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				87F1705B2EEE6A010058D8BF /* harveyspectorquotes */,
+				87F1705B2EEE6A010058D8BF /* harveyspecterquotes */,
 				87F170832EEE6C200058D8BF /* docs */,
 			);
-			name = harveyspectorquotes;
+			name = harveyspecterquotes;
 			packageProductDependencies = (
 			);
-			productName = harveyspectorquotes;
-			productReference = 87F170592EEE6A010058D8BF /* harveyspectorquotes.app */;
+			productName = harveyspecterquotes;
+			productReference = 87F170592EEE6A010058D8BF /* harveyspecterquotes.app */;
 			productType = "com.apple.product-type.application";
 		};
-		87F170652EEE6A0D0058D8BF /* harveyspectorquotesTests */ = {
+		87F170652EEE6A0D0058D8BF /* harveyspecterquotesTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 87F1707D2EEE6A0D0058D8BF /* Build configuration list for PBXNativeTarget "harveyspectorquotesTests" */;
+			buildConfigurationList = 87F1707D2EEE6A0D0058D8BF /* Build configuration list for PBXNativeTarget "harveyspecterquotesTests" */;
 			buildPhases = (
 				87F170622EEE6A0D0058D8BF /* Sources */,
 				87F170632EEE6A0D0058D8BF /* Frameworks */,
@@ -209,18 +211,18 @@
 				87F170682EEE6A0D0058D8BF /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				87F170692EEE6A0D0058D8BF /* harveyspectorquotesTests */,
+				87F170692EEE6A0D0058D8BF /* harveyspecterquotesTests */,
 			);
-			name = harveyspectorquotesTests;
+			name = harveyspecterquotesTests;
 			packageProductDependencies = (
 			);
-			productName = harveyspectorquotesTests;
-			productReference = 87F170662EEE6A0D0058D8BF /* harveyspectorquotesTests.xctest */;
+			productName = harveyspecterquotesTests;
+			productReference = 87F170662EEE6A0D0058D8BF /* harveyspecterquotesTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		87F1706F2EEE6A0D0058D8BF /* harveyspectorquotesUITests */ = {
+		87F1706F2EEE6A0D0058D8BF /* harveyspecterquotesUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 87F170802EEE6A0D0058D8BF /* Build configuration list for PBXNativeTarget "harveyspectorquotesUITests" */;
+			buildConfigurationList = 87F170802EEE6A0D0058D8BF /* Build configuration list for PBXNativeTarget "harveyspecterquotesUITests" */;
 			buildPhases = (
 				87F1706C2EEE6A0D0058D8BF /* Sources */,
 				87F1706D2EEE6A0D0058D8BF /* Frameworks */,
@@ -232,13 +234,13 @@
 				87F170722EEE6A0D0058D8BF /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				87F170732EEE6A0D0058D8BF /* harveyspectorquotesUITests */,
+				87F170732EEE6A0D0058D8BF /* harveyspecterquotesUITests */,
 			);
-			name = harveyspectorquotesUITests;
+			name = harveyspecterquotesUITests;
 			packageProductDependencies = (
 			);
-			productName = harveyspectorquotesUITests;
-			productReference = 87F170702EEE6A0D0058D8BF /* harveyspectorquotesUITests.xctest */;
+			productName = harveyspecterquotesUITests;
+			productReference = 87F170702EEE6A0D0058D8BF /* harveyspecterquotesUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 		87F170922EEE718A0058D8BF /* QuoteWidgetExtension */ = {
@@ -258,6 +260,7 @@
 			);
 			name = QuoteWidgetExtension;
 			packageProductDependencies = (
+				87F170B82EEFDABA0058D8BF /* MarqueeText */,
 			);
 			productName = QuoteWidgetExtension;
 			productReference = 87F170932EEE718A0058D8BF /* QuoteWidgetExtension.appex */;
@@ -289,7 +292,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 87F170542EEE6A010058D8BF /* Build configuration list for PBXProject "harveyspectorquotes" */;
+			buildConfigurationList = 87F170542EEE6A010058D8BF /* Build configuration list for PBXProject "harveyspecterquotes" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -298,14 +301,17 @@
 			);
 			mainGroup = 87F170502EEE6A010058D8BF;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				87F170B72EEFDABA0058D8BF /* XCRemoteSwiftPackageReference "MarqueeText" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 87F1705A2EEE6A010058D8BF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				87F170582EEE6A010058D8BF /* harveyspectorquotes */,
-				87F170652EEE6A0D0058D8BF /* harveyspectorquotesTests */,
-				87F1706F2EEE6A0D0058D8BF /* harveyspectorquotesUITests */,
+				87F170582EEE6A010058D8BF /* harveyspecterquotes */,
+				87F170652EEE6A0D0058D8BF /* harveyspecterquotesTests */,
+				87F1706F2EEE6A0D0058D8BF /* harveyspecterquotesUITests */,
 				87F170922EEE718A0058D8BF /* QuoteWidgetExtension */,
 			);
 		};
@@ -376,12 +382,12 @@
 /* Begin PBXTargetDependency section */
 		87F170682EEE6A0D0058D8BF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 87F170582EEE6A010058D8BF /* harveyspectorquotes */;
+			target = 87F170582EEE6A010058D8BF /* harveyspecterquotes */;
 			targetProxy = 87F170672EEE6A0D0058D8BF /* PBXContainerItemProxy */;
 		};
 		87F170722EEE6A0D0058D8BF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 87F170582EEE6A010058D8BF /* harveyspectorquotes */;
+			target = 87F170582EEE6A010058D8BF /* harveyspecterquotes */;
 			targetProxy = 87F170712EEE6A0D0058D8BF /* PBXContainerItemProxy */;
 		};
 		87F170A82EEE718B0058D8BF /* PBXTargetDependency */ = {
@@ -533,7 +539,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.atdtn.harveyspectorquotes;
+				PRODUCT_BUNDLE_IDENTIFIER = com.atdtn.harveyspecterquotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -565,7 +571,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.atdtn.harveyspectorquotes;
+				PRODUCT_BUNDLE_IDENTIFIER = com.atdtn.harveyspecterquotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -587,7 +593,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.1;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.atdtn.harveyspectorquotesTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.atdtn.harveyspecterquotesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -595,7 +601,7 @@
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/harveyspectorquotes.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/harveyspectorquotes";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/harveyspecterquotes.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/harveyspecterquotes";
 			};
 			name = Debug;
 		};
@@ -609,7 +615,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.1;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.atdtn.harveyspectorquotesTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.atdtn.harveyspecterquotesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -617,7 +623,7 @@
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/harveyspectorquotes.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/harveyspectorquotes";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/harveyspecterquotes.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/harveyspecterquotes";
 			};
 			name = Release;
 		};
@@ -629,7 +635,7 @@
 				DEVELOPMENT_TEAM = CU896UMJNM;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.atdtn.harveyspectorquotesUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.atdtn.harveyspecterquotesUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -637,7 +643,7 @@
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = harveyspectorquotes;
+				TEST_TARGET_NAME = harveyspecterquotes;
 			};
 			name = Debug;
 		};
@@ -649,7 +655,7 @@
 				DEVELOPMENT_TEAM = CU896UMJNM;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.atdtn.harveyspectorquotesUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.atdtn.harveyspecterquotesUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -657,7 +663,7 @@
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = harveyspectorquotes;
+				TEST_TARGET_NAME = harveyspecterquotes;
 			};
 			name = Release;
 		};
@@ -679,7 +685,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.atdtn.harveyspectorquotes.QuoteWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.atdtn.harveyspecterquotes.QuoteWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -709,7 +715,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.atdtn.harveyspectorquotes.QuoteWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.atdtn.harveyspecterquotes.QuoteWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -724,7 +730,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		87F170542EEE6A010058D8BF /* Build configuration list for PBXProject "harveyspectorquotes" */ = {
+		87F170542EEE6A010058D8BF /* Build configuration list for PBXProject "harveyspecterquotes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				87F170782EEE6A0D0058D8BF /* Debug */,
@@ -733,7 +739,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		87F1707A2EEE6A0D0058D8BF /* Build configuration list for PBXNativeTarget "harveyspectorquotes" */ = {
+		87F1707A2EEE6A0D0058D8BF /* Build configuration list for PBXNativeTarget "harveyspecterquotes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				87F1707B2EEE6A0D0058D8BF /* Debug */,
@@ -742,7 +748,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		87F1707D2EEE6A0D0058D8BF /* Build configuration list for PBXNativeTarget "harveyspectorquotesTests" */ = {
+		87F1707D2EEE6A0D0058D8BF /* Build configuration list for PBXNativeTarget "harveyspecterquotesTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				87F1707E2EEE6A0D0058D8BF /* Debug */,
@@ -751,7 +757,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		87F170802EEE6A0D0058D8BF /* Build configuration list for PBXNativeTarget "harveyspectorquotesUITests" */ = {
+		87F170802EEE6A0D0058D8BF /* Build configuration list for PBXNativeTarget "harveyspecterquotesUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				87F170812EEE6A0D0058D8BF /* Debug */,
@@ -770,6 +776,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		87F170B72EEFDABA0058D8BF /* XCRemoteSwiftPackageReference "MarqueeText" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/joekndy/MarqueeText";
+			requirement = {
+				kind = revision;
+				revision = 22309f6863a182e81a2b4ebbca8cdc044f854b33;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		87F170B82EEFDABA0058D8BF /* MarqueeText */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 87F170B72EEFDABA0058D8BF /* XCRemoteSwiftPackageReference "MarqueeText" */;
+			productName = MarqueeText;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 87F170512EEE6A010058D8BF /* Project object */;
 }

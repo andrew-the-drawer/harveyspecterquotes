@@ -1,6 +1,6 @@
 //
 //  QuoteDetailView.swift
-//  harveyspectorquotes
+//  harveyspecterquotes
 //
 //  Created by Trung Nguyen on 14/12/25.
 //

@@ -1,6 +1,6 @@
 //
 //  ColorSystem.swift
-//  harveyspectorquotes
+//  harveyspecterquotes
 //
 //  Design System Colors - Harvey Specter Aesthetic
 //

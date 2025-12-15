@@ -1,6 +1,6 @@
 //
 //  QuoteListView.swift
-//  harveyspectorquotes
+//  harveyspecterquotes
 //
 //  Created by Trung Nguyen on 14/12/25.
 //
@@ -37,7 +37,7 @@ struct QuoteListView: View {
         .opacity(hasAppeared ? 1 : 0)
         .offset(y: hasAppeared ? 0 : 20)
         .onAppear {
-            withAnimation(.easeOut(duration: 0.4).delay(Double(index) * 0.05)) {
+            withAnimation(.easeOut(duration: 0.1).delay(Double(index) * 0.05)) {
                 _ = appearedCards.insert(index)
             }
         }
@@ -123,11 +123,9 @@ struct QuoteCardView: View {
         .shadow(color: Color.black.opacity(0.3), radius: 8, x: 0, y: 4)
         .scaleEffect(isPressed ? 0.97 : 1.0)
         .animation(.easeInOut(duration: 0.15), value: isPressed)
-        .simultaneousGesture(
-            DragGesture(minimumDistance: 0)
-                .onChanged { _ in isPressed = true }
-                .onEnded { _ in isPressed = false }
-        )
+        .onLongPressGesture(minimumDuration: 0.5, pressing: { pressing in
+            isPressed = pressing
+        }, perform: {})
     }
 }
 

@@ -1,13 +1,13 @@
 //
-//  harveyspectorquotesUITestsLaunchTests.swift
-//  harveyspectorquotesUITests
+//  harveyspecterquotesUITestsLaunchTests.swift
+//  harveyspecterquotesUITests
 //
 //  Created by Trung Nguyen on 14/12/25.
 //
 
 import XCTest
 
-final class harveyspectorquotesUITestsLaunchTests: XCTestCase {
+final class harveyspecterquotesUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

@@ -1,6 +1,6 @@
 //
-//  harveyspectorquotesApp.swift
-//  harveyspectorquotes
+//  harveyspecterquotesApp.swift
+//  harveyspecterquotes
 //
 //  Created by Trung Nguyen on 14/12/25.
 //
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct harveyspectorquotesApp: App {
+struct harveyspecterquotesApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
