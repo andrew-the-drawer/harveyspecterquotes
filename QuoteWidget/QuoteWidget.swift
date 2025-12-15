@@ -10,24 +10,34 @@ import SwiftUI
 
 
 struct Provider: AppIntentTimelineProvider {
+    // Cached quotes filtered to 15 words or less
+    private static let cachedQuotes: [String] = {
+        guard let url = Bundle.main.url(forResource: "quotes", withExtension: "json"),
+              let data = try? Data(contentsOf: url),
+              let quotes = try? JSONDecoder().decode([String].self, from: data) else {
+            return ["I don't have dreams, I have goals."]
+        }
+        return quotes.filter { $0.split(separator: " ").count <= 15 }
+    }()
+
     func placeholder(in context: Context) -> QuoteEntry {
         QuoteEntry(date: Date(), quote: "I don't have dreams, I have goals.", configuration: ConfigurationAppIntent())
     }
 
     func snapshot(for configuration: ConfigurationAppIntent, in context: Context) async -> QuoteEntry {
-        QuoteEntry(date: Date(), quote: loadRandomQuote(), configuration: configuration)
+        QuoteEntry(date: Date(), quote: quoteForDate(Date()), configuration: configuration)
     }
 
     func timeline(for configuration: ConfigurationAppIntent, in context: Context) async -> Timeline<QuoteEntry> {
         var entries: [QuoteEntry] = []
 
-        // Generate a timeline with new quotes each day at midnight
+        // Generate a timeline with quotes rotating by day of year
         let currentDate = Date()
         let calendar = Calendar.current
 
         // Create entry for today
         if let startOfDay = calendar.startOfDay(for: currentDate) as Date? {
-            let entry = QuoteEntry(date: startOfDay, quote: loadRandomQuote(), configuration: configuration)
+            let entry = QuoteEntry(date: startOfDay, quote: quoteForDate(startOfDay), configuration: configuration)
             entries.append(entry)
         }
 
@@ -35,7 +45,7 @@ struct Provider: AppIntentTimelineProvider {
         for dayOffset in 1...7 {
             if let entryDate = calendar.date(byAdding: .day, value: dayOffset, to: currentDate),
                let startOfDay = calendar.startOfDay(for: entryDate) as Date? {
-                let entry = QuoteEntry(date: startOfDay, quote: loadRandomQuote(), configuration: configuration)
+                let entry = QuoteEntry(date: startOfDay, quote: quoteForDate(startOfDay), configuration: configuration)
                 entries.append(entry)
             }
         }
@@ -43,19 +53,15 @@ struct Provider: AppIntentTimelineProvider {
         return Timeline(entries: entries, policy: .atEnd)
     }
 
-    private func loadRandomQuote() -> String {
-        guard let url = Bundle.main.url(forResource: "quotes", withExtension: "json"),
-              let data = try? Data(contentsOf: url),
-              let quotes = try? JSONDecoder().decode([String].self, from: data) else {
+    /// Returns a quote based on the day of year (1-366) mod quotes.count
+    private func quoteForDate(_ date: Date) -> String {
+        let quotes = Self.cachedQuotes
+        guard !quotes.isEmpty else {
             return "I don't have dreams, I have goals."
         }
-
-        // Filter quotes to 15 words or less for widget display
-        let shortQuotes = quotes.filter { quote in
-            quote.split(separator: " ").count <= 15
-        }
-
-        return shortQuotes.randomElement() ?? "I don't have dreams, I have goals."
+        let dayOfYear = Calendar.current.ordinality(of: .day, in: .year, for: date) ?? 1
+        let index = (dayOfYear - 1) % quotes.count
+        return quotes[index]
     }
 }
 
