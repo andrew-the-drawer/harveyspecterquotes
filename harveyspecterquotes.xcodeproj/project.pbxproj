@@ -68,11 +68,21 @@
 			);
 			target = 87F170922EEE718A0058D8BF /* QuoteWidgetExtension */;
 		};
+		87F4C2C72EF0FCE200BE6AB0 /* Exceptions for "harveyspecterquotes" folder in "QuoteWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				quotes.json,
+			);
+			target = 87F170922EEE718A0058D8BF /* QuoteWidgetExtension */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		87F1705B2EEE6A010058D8BF /* harveyspecterquotes */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				87F4C2C72EF0FCE200BE6AB0 /* Exceptions for "harveyspecterquotes" folder in "QuoteWidgetExtension" target */,
+			);
 			path = harveyspecterquotes;
 			sourceTree = "<group>";
 		};

@@ -15,7 +15,7 @@ struct Provider: AppIntentTimelineProvider {
         guard let url = Bundle.main.url(forResource: "quotes", withExtension: "json"),
               let data = try? Data(contentsOf: url),
               let quotes = try? JSONDecoder().decode([String].self, from: data) else {
-            return ["I don't get lucky, I make my own luck"]
+            return ["No quote available"]
         }
         return quotes.filter { $0.split(separator: " ").count <= 15 }
     }()
@@ -34,7 +34,7 @@ struct Provider: AppIntentTimelineProvider {
         let currentDate = Date()
         let calendar = Calendar.current
         for offset in 0...3 {
-            let entryDate = calendar.date(byAdding: .minute, value: offset * 15, to: currentDate)
+            let entryDate = calendar.date(byAdding: .hour, value: offset * 2, to: currentDate)
             let quote = quoteRandom()
             let entry = QuoteEntry(date: entryDate!, quote: quote, configuration: configuration)
             entries.append(entry)
