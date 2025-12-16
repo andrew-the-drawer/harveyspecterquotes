@@ -10,7 +10,6 @@
 		87F170962EEE718A0058D8BF /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87F170952EEE718A0058D8BF /* WidgetKit.framework */; };
 		87F170982EEE718A0058D8BF /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87F170972EEE718A0058D8BF /* SwiftUI.framework */; };
 		87F170A92EEE718B0058D8BF /* QuoteWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 87F170932EEE718A0058D8BF /* QuoteWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		87F170B92EEFDABA0058D8BF /* MarqueeText in Frameworks */ = {isa = PBXBuildFile; productRef = 87F170B82EEFDABA0058D8BF /* MarqueeText */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,7 +136,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87F170B92EEFDABA0058D8BF /* MarqueeText in Frameworks */,
 				87F170982EEE718A0058D8BF /* SwiftUI.framework in Frameworks */,
 				87F170962EEE718A0058D8BF /* WidgetKit.framework in Frameworks */,
 			);
@@ -270,7 +268,6 @@
 			);
 			name = QuoteWidgetExtension;
 			packageProductDependencies = (
-				87F170B82EEFDABA0058D8BF /* MarqueeText */,
 			);
 			productName = QuoteWidgetExtension;
 			productReference = 87F170932EEE718A0058D8BF /* QuoteWidgetExtension.appex */;
@@ -312,7 +309,6 @@
 			mainGroup = 87F170502EEE6A010058D8BF;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				87F170B72EEFDABA0058D8BF /* XCRemoteSwiftPackageReference "MarqueeText" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 87F1705A2EEE6A010058D8BF /* Products */;
@@ -786,25 +782,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		87F170B72EEFDABA0058D8BF /* XCRemoteSwiftPackageReference "MarqueeText" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/joekndy/MarqueeText";
-			requirement = {
-				kind = revision;
-				revision = 22309f6863a182e81a2b4ebbca8cdc044f854b33;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		87F170B82EEFDABA0058D8BF /* MarqueeText */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 87F170B72EEFDABA0058D8BF /* XCRemoteSwiftPackageReference "MarqueeText" */;
-			productName = MarqueeText;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 87F170512EEE6A010058D8BF /* Project object */;
 }
