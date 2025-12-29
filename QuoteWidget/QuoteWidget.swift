@@ -30,16 +30,55 @@ struct Provider: AppIntentTimelineProvider {
 
     func timeline(for configuration: ConfigurationAppIntent, in context: Context) async -> Timeline<QuoteEntry> {
         var entries: [QuoteEntry] = []
-        
+
         let currentDate = Date()
         let calendar = Calendar.current
-        for offset in 0...3 {
-            let entryDate = calendar.date(byAdding: .hour, value: offset * 2, to: currentDate)
-            let quote = quoteRandom()
-            let entry = QuoteEntry(date: entryDate!, quote: quote, configuration: configuration)
-            entries.append(entry)
+
+        // Add current entry
+        let currentQuote = quoteRandom()
+        entries.append(QuoteEntry(date: currentDate, quote: currentQuote, configuration: configuration))
+
+        // Calculate next entry date based on time of day
+        let hour = calendar.component(.hour, from: currentDate)
+
+        let nextDate: Date
+
+        if hour >= 23 || hour < 7 {
+            // Night time (11pm - 7am): schedule for 8:00am
+            var components = calendar.dateComponents([.year, .month, .day], from: currentDate)
+            components.hour = 8
+            components.minute = 0
+            components.second = 0
+
+            if hour >= 23 {
+                // After 11pm, schedule for 8am next day
+                if let baseDate = calendar.date(from: components),
+                   let tomorrow8am = calendar.date(byAdding: .day, value: 1, to: baseDate) {
+                    nextDate = tomorrow8am
+                } else {
+                    nextDate = calendar.date(byAdding: .hour, value: 2, to: currentDate)!
+                }
+            } else {
+                // Before 7am, schedule for 8am same day
+                nextDate = calendar.date(from: components) ?? calendar.date(byAdding: .hour, value: 2, to: currentDate)!
+            }
+        } else if hour >= 12 && hour < 14 {
+            // Lunch time (12pm - 2pm): schedule for 2:30pm same day
+            var components = calendar.dateComponents([.year, .month, .day], from: currentDate)
+            components.hour = 14
+            components.minute = 30
+            components.second = 0
+            nextDate = calendar.date(from: components) ?? calendar.date(byAdding: .hour, value: 2, to: currentDate)!
+        } else {
+            // Otherwise: every 2 hours
+            nextDate = calendar.date(byAdding: .hour, value: 2, to: currentDate)!
         }
-        // Generate a timeline with quotes rotating by counter
+
+        // Add next entry
+        let nextQuote = quoteRandom()
+        entries.append(QuoteEntry(date: nextDate, quote: nextQuote, configuration: configuration))
+
+        // Generate a timeline with 2 entries (current + next)
         return Timeline(entries: entries, policy: .atEnd)
     }
 
